@@ -33,10 +33,14 @@ class View(ft.UserControl):
                       alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row1)
 
-        self._ddArtist = ft.Dropdown(label="Artist", width=250)
-        self._btnCreaGrafo = ft.ElevatedButton(text="Trova Cammino", on_click=self._controller.handleCammino, width=250)
+        self._txtMin = ft.TextField(label="Min Peso", width=120)
+        self._ddTrackStart = ft.Dropdown(label="Start track", width=350)
+        self._ddTrackEnd = ft.Dropdown(label="End track", width=350)
 
-        row2 = ft.Row([self._ddArtist, self._btnCreaGrafo],
+        self._btnCercaCammino = ft.ElevatedButton(text="Cerca ",
+                                                  on_click=self._controller.handleCercaCammino, width=120)
+
+        row2 = ft.Row([self._txtMin, self._ddTrackStart, self._ddTrackEnd, self._btnCercaCammino],
                       alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row2)
 
