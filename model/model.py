@@ -54,7 +54,7 @@ class Model:
 
     def _ricorsione(self, parziale, massimo, end):
         if parziale[-1] == end:
-            if len(self._bestPath) == 0 or len(parziale) < len(self._bestPath):
+            if len(self._bestPath) == 0 or len(parziale) >  len(self._bestPath):
                 self._bestPath = copy.deepcopy(parziale)
                 self._bestScore = self._getScore(parziale)
             return
